@@ -1,0 +1,7 @@
+<mat-toolbar color="primary">
+  <a mat-button routerLink="/">E-Commerce</a>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/cart" matBadge="{{ cartService.getCartItemCount() }}" matBadgeColor="accent">Cart</a>
+  <a *ngIf="!authService.isLoggedIn()" mat-button routerLink="/login">Login</a>
+  <a *ngIf="authService.isLoggedIn()" mat-button (click)="logout()">Logout</a>
+</mat-toolbar>

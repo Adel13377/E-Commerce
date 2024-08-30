@@ -1,0 +1,9 @@
+.product-detail {
+    max-width: 800px;
+    margin: 50px auto;
+  }
+  
+  mat-card {
+    padding: 20px;
+  }
+  

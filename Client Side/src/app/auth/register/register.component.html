@@ -1,0 +1,60 @@
+<div class="auth-container">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Name" formControlName="name" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" formControlName="email" type="email" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Password" formControlName="password" type="password" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
+  </div>
+  
+
+  <!-- The error message you're seeing is related to the Angular Material `mat-form-field` component not being recognized in your Angular application. This error typically occurs when the Angular Material module is not imported correctly or when the necessary dependencies are not installed.
+
+To resolve this issue, you can try the following steps:
+
+1. Make sure you have installed Angular Material and its dependencies. You can do this by running the following command in your project directory:
+   ```
+   npm install @angular/material @angular/cdk
+   ```
+
+2. Import the Angular Material module in your `app.module.ts` file. Add the following import statement at the top of the file:
+   ```typescript
+   import { MatFormFieldModule } from '@angular/material/form-field';
+   ```
+
+3. Add `MatFormFieldModule` to the `imports` array in the `@NgModule` decorator of your `app.module.ts` file:
+   ```typescript
+   @NgModule({
+     // ...
+     imports: [
+       // ...
+       MatFormFieldModule
+     ],
+     // ...
+   })
+   export class AppModule { }
+   ```
+
+4. If you are using a custom element schema, make sure to import it in your module file and add it to the `schemas` array:
+   ```typescript
+   import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+   @NgModule({
+     // ...
+     schemas: [CUSTOM_ELEMENTS_SCHEMA],
+     // ...
+   })
+   export class AppModule { }
+   ```
+
+After making these changes, try running `ng serve` again to see if the error is resolved.
+
+Let me know if you need any further assistance! -->
